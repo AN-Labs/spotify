@@ -1,17 +1,13 @@
+
 import getLikedSongs from "@/actions/getLikedSongs"
 import Header from "@/components/Header"
 import Image from "next/image"
 import LikedContent from "./components/LikedContent"
-import { Song } from "@/types"
 
 export const validate = 0
 
-interface LikedProps {
-    songs: Song[]
-}
-
-const Liked: React.FC<LikedProps> = ({ songs }) => {
-    // const songs = getLikedSongs()
+const Liked = async () => {
+    const songs = await getLikedSongs()
 
     return (
         <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
